@@ -43,6 +43,7 @@ class Roomlist extends Component {
           }
         </ul>
         <form onSubmit={(e) => this.createRoom(e)}>
+          <span>Create a room: </span>
           <input type="text" value={this.state.newRoomName} onChange={(e) => this.handleChange(e)}/>
           <input type="submit" />
         </form>

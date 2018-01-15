@@ -26,9 +26,7 @@ class App extends Component {
   }
 
   setActiveRoom(room) {
-    console.log('Incoming room: ' + room);
     this.setState({ activeRoom: room });
-    console.log('Active room is now ' + this.state.activeRoom)
   }
 
   setUser(user) {
@@ -45,7 +43,7 @@ class App extends Component {
           <Roomlist firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)} />
           <User firebase={firebase} setUser={(user) => this.setUser(user)} user={this.state.user}/>
           <h3>{this.state.activeRoom ? null : "Click on a room to start chatting!"}</h3>
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user} />
         </main>
       </div>
     );

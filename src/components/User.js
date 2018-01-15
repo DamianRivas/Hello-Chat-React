@@ -11,12 +11,12 @@ class User extends Component {
     })
   }
 
-  signIn() {
+  signIn = () => {
     const provider = new this.props.firebase.auth.GoogleAuthProvider();
     this.props.firebase.auth().signInWithPopup(provider);
   }
 
-  signOut() {
+  signOut = () => {
     this.props.firebase.auth().signOut();
   }
 

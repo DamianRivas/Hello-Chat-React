@@ -20,8 +20,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeRoom: null, //THIS IS A ROOM OBJECT
+      activeRoom: null,
       user: null
+      // Both activeRoom and user are objects
     }
   }
 
@@ -42,8 +43,11 @@ class App extends Component {
         <main>
           <Roomlist firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)} />
           <User firebase={firebase} setUser={(user) => this.setUser(user)} user={this.state.user}/>
-          <h3>{this.state.activeRoom ? null : "Click on a room to start chatting!"}</h3>
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user} />
+          {
+            this.state.activeRoom ?
+              <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user} /> :
+              <h3>"Click on a room to start chatting!"</h3>
+          }
         </main>
       </div>
     );

@@ -22,7 +22,6 @@ class MessageList extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.activeRoom !== prevProps.activeRoom || prevState.messages !== this.state.messages) {
-      if (!this.props.activeRoom) { return }
       this.filterMessages();
     }
   }
@@ -39,7 +38,7 @@ class MessageList extends Component {
   sendMessage(e) {
     e.preventDefault();
 
-    if ( !this.state.newMessage || !this.props.activeRoom ) {
+    if ( !this.state.newMessage ) {
       console.log('Message not sent');
       return
     }
@@ -59,7 +58,7 @@ class MessageList extends Component {
   render() {
     return (
       <section className="activeMessages">
-        <h2>{this.props.activeRoom ? this.props.activeRoom.name : null}</h2>
+        <h2>{this.props.activeRoom.name}</h2>
         <ul>
           {
             this.state.displayedMessages.map((message, index) => <li key={index}>{message.username + ": " + message.content}</li>)

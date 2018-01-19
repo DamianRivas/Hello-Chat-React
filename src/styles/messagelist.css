@@ -1,0 +1,22 @@
+.activeMessages {
+  height: 100%;
+  margin-left: 2rem;
+}
+
+li.message {
+  margin-bottom: 1rem;
+}
+
+.sender {
+  font-weight: 700;
+}
+
+.sentAt {
+  color: #B0B0B1;
+  font-size: .8rem;
+  font-weight: 100;
+}
+
+.message-input {
+  width: 400px;
+}

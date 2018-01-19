@@ -1,11 +1,19 @@
 .App {
   text-align: center;
+  color: #2C2D30;
+}
+
+main {
+  height: 100vh;
 }
 
 .messages {
-  box-sizing: border-box;
-  position: fixed;
   right: 0;
-  width: 70%;
+  width: 100%;
   margin-top: 2rem;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
 }

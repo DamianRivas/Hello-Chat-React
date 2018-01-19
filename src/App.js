@@ -37,14 +37,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Roomlist firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)} />
         <main>
-          <Roomlist firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)} />
           <User firebase={firebase} setUser={(user) => this.setUser(user)} user={this.state.user} />
           <section className="messages">
             {
               this.state.activeRoom ?
                 <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user} /> :
-                <h3>"Click on a room to start chatting!"</h3>
+                <h3>Click on a room to start chatting!</h3>
             }
           </section>
         </main>

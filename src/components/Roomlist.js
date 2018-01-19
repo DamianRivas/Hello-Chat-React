@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/roomlist.css';
 
 class Roomlist extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Roomlist extends Component {
   render() {
     return (
       <section className="sidebar">
+        <h1>Hellochat!</h1>
         <ul className="roomlist">
           {
             this.state.rooms.map((room, index) =>
@@ -43,7 +45,7 @@ class Roomlist extends Component {
           }
         </ul>
         <form onSubmit={(e) => this.createRoom(e)}>
-          <span>Create a room: </span>
+          <span>Create room: </span>
           <input type="text" value={this.state.newRoomName} onChange={(e) => this.handleChange(e)}/>
           <input type="submit" />
         </form>
